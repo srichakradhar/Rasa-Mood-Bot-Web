@@ -2,3 +2,4 @@
 .ipynb_checkpoints
 models
 codealike.json
+__pycache__

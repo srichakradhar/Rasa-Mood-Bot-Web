@@ -48,3 +48,15 @@
 - not very good
 - extremely sad
 - so sad
+
+## intent:joke
+- Can you tell me a joke?
+- I would like to hear a joke
+- Tell me a joke
+- A joke please
+- Tell me a joke please
+- I would like to hear a joke
+- I would loke to hear a joke, please
+- Can you tell jokes?
+- Please tell me a joke
+- I need to hear a joke

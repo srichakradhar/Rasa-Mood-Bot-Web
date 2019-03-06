@@ -4,6 +4,7 @@ from rasa_core.interpreter import RasaNLUInterpreter
 from rasa_core.channels.channel import CollectingOutputChannel
 from flask import json
 from klein import Klein
+from rasa_core.utils import AvailableEndpoints
 
 logger = logging.getLogger(__name__)
 
@@ -37,7 +38,8 @@ class Server:
     def _create_agent(model_directory, interpreter):
         """Creates a Rasa Agent which runs when the server is started"""
         try:
-            return Agent.load(model_directory, interpreter)
+            endpoints = AvailableEndpoints.read_endpoints('endpoints.yml')
+            return Agent.load(model_directory, interpreter, action_endpoint=endpoints.action)
         except Exception as e:
             logger.warn("Failed to load any agent model. Running "
                         "Rasa Core server with out loaded model now. {}"
